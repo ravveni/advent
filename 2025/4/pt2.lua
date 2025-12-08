@@ -1,6 +1,6 @@
 -- Forklifts can only access a roll of paper (@) if there are fewer than four rolls of paper in the eight adjacent positions.
 -- Accessible rolls can be removed. Re-evaluate accessibility and remove rolls until no more rolls are accessible.
--- Count total # rolls removed. testinput.txt has 43 total rolls removed.
+-- Count total # rolls removed. example.txt has 43 total rolls removed.
 -- 8899
 
 local Coord = {}

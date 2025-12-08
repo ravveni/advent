@@ -1,5 +1,5 @@
 -- Forklifts can only access a roll of paper (@) if there are fewer than four rolls of paper in the eight adjacent positions.
--- Count # rolls of paper accessible by forklift. testinput.txt has 13 rolls accessible.
+-- Count # rolls of paper accessible by forklift. example.txt has 13 rolls accessible.
 -- 1480
 
 local function isRollAccessible(map, row, col)

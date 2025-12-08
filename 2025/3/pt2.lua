@@ -9,10 +9,9 @@ local function getHighestBankJoltage(bank, start, endMod, dynNum, size)
     end
 
     local numBatteries = string.len(bank)
-    local highestBankJoltage = 0
     local highestDigit = 0
-
     local rollingStartIndex = start
+
     for i = rollingStartIndex, numBatteries - endMod do
         local testDigit = tonumber(string.sub(bank, i, i))
         if testDigit > highestDigit then
@@ -22,11 +21,7 @@ local function getHighestBankJoltage(bank, start, endMod, dynNum, size)
     end
 
     table.insert(dynNum, highestDigit)
-    local testBankJoltage = getHighestBankJoltage(bank, rollingStartIndex, endMod - 1, dynNum, size)
-    highestBankJoltage = math.max(highestBankJoltage, testBankJoltage)
-    table.remove(dynNum)
-
-    return highestBankJoltage
+    return getHighestBankJoltage(bank, rollingStartIndex, endMod - 1, dynNum, size)
 end
 
 local function main()
